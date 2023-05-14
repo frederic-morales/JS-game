@@ -17,9 +17,17 @@ function startGame(){
     game.font = elementsSize + 'px Verdana';
     game.textAlign = 'end';
 
-    for (let x = 1.2; x <= 12; x++) {
-        for (let y = 1; y <= 10; y++) {
-            game.fillText(emojis['X'], elementsSize * x, elementsSize * y)            
+    //Maps
+    const map = maps[1];
+    const mapRows = map.trim().split('\n');
+    const mapRowsCols = mapRows.map(row => row.trim().split(''));
+    console.log(map);
+
+
+    for (let row = 1; row <= 10; row++) {
+        for (let col = 1; col <= 10; col++) {
+            game.fillText(emojis[mapRowsCols[row -1][col - 1]],
+            elementsSize * col, elementsSize * row)            
         }
     }
 
@@ -31,7 +39,6 @@ function startGame(){
     //game.textAlign = "left";
     //game.fillText('Platzi', 25, 25);
 };
-
 function resizeCanvas(){
     let width = window.innerWidth; //1000px
     let height = window.innerHeight; //700px
