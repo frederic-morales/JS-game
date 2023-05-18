@@ -23,13 +23,18 @@ function startGame(){
     const mapRowsCols = mapRows.map(row => row.trim().split(''));
     console.log(map);
 
+    mapRowsCols.forEach(row => {
+        row.forEach(col => {
+            console.log({row, col});
+        })
+    });
 
-    for (let row = 1; row <= 10; row++) {
+    /*for (let row = 1; row <= 10; row++) {
         for (let col = 1; col <= 10; col++) {
             game.fillText(emojis[mapRowsCols[row -1][col - 1]],
             elementsSize * col, elementsSize * row)            
         }
-    }
+    }*/
 
     //game.fillRect(0,0,0,0);
     //game.clearRect(0,0,0,0);
